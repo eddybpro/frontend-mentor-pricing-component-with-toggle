@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root{
+    --Linear-Gradient1: hsl(236, 72%, 79%);
+    --Linear-Gradient2: hsl(237, 63%, 64%);
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+    --White :hsl(0, 0%, 100%);
+    --Body-BG :hsl(240, 100%, 98%);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background:url('./images/bg-top.svg');
+    background-position: top -5rem right -18rem;
+    background-repeat: no-repeat;
+    background-size: 40rem 80rem;
+    background-color: var(--Body-BG);
+}
+
+header{
+    margin: 5rem 0 2rem;
+}
+
+.title{
+    font-size: 3rem;
+    color: var(--Grayish-Blue);
+}
+
+.method{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 4rem 0 1rem;
+}
+
+.annualy{
+    font-size: 1.5rem;
+    color: var(--Light-Grayish-Blue);
+}
+
+.checkbox{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 2rem;
+    background: linear-gradient(94deg, var(--Linear-Gradient1), var(--Linear-Gradient2));
+    cursor: pointer;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.checkbox:hover{
+    opacity: .5;
+}
+
+.checkbox::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--White);
+    border-radius: 50%;
+}
+
+.checkbox:checked::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 2px;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--White);
+    border-radius: 50%;
+}
+
+main{
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.card{
+    width: 90%;
+    background-color: var(--White);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.category{
+    font-size: 2.25rem;
+    margin: 1rem 0;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin: 2rem 0;
+}
+
+.dollar{
+    font-size: 1.5rem;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.amount{
+    display: block;
+    font-size: 3.25rem;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.list{
+    list-style: none;
+}
+
+.item{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--Dark-Grayish-Blue);
+    border-top: 1px solid var(--Grayish-Blue);
+    padding: 1.5rem 0 1rem;
+}
+
+.item:last-child{
+    border-bottom: 1px solid var(--Grayish-Blue);
+    padding-bottom: 1.5rem;
+}
+
+.btn{
+    width: 100%;
+    padding: 1rem 0;
+    background: linear-gradient(94deg, var(--Linear-Gradient1), var(--Linear-Gradient2));
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--White);
+    letter-spacing: 2px;
+    margin: 1rem 0;
+}
+
+.btn:hover{
+    background: none;
+    padding: .9rem 0;
+    color: var(--Linear-Gradient2);
+    border: 1px solid var(--Linear-Gradient2);
+}
+
+.card-pro{
+    background: linear-gradient(94deg, var(--Linear-Gradient1), var(--Linear-Gradient2));
+}
+
+.card-pro .category,
+.card-pro .dollar ,
+.card-pro .amount,
+.card-pro .item{
+    color: var(--White);
+}
+
+.card-pro .btn{
+    background: none;
+    background-color: var(--White);
+    color: var(--Linear-Gradient2);
+}
+
+.card-pro .btn:hover{
+    background-color: transparent;
+    color: var(--White);
+    border: 1px solid var(--White);
+}
+
+footer{
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.5em;
+    padding: 0 1rem;
+    color: var(--Grayish-Blue);
+}
+
+footer a{
+    color: var(--Dark-Grayish-Blue);
+    text-decoration: none;
+}
+
+@media screen and (min-width:768px) {
+    body{
+        background:url('./images/bg-top.svg'), url('./images/bg-bottom.svg');
+        background-position: top 0 right -6rem, bottom left;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 40rem 60rem, 35rem 35rem;
+    }
+
+    main{
+        max-width: 100rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
